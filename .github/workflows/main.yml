@@ -1,20 +1,13 @@
-mame: a name for my workflow
+name: a name for my workflow
 
 on:
     push:
-        branches:
-            - main
-
+        branches: main
 jobs:
     build-deploy:
-        name: Build and Deploy something
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-                uses: actions/checkout@v4
-
-            - name: install python3
-                uses: actions/setup-python@v5
+        name: something
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
                 with:
-                    python-version: 'pypy3.10'
-                run: python my_script.py
+                    python-version: '3.13' 
+            - run: python my_script.py
